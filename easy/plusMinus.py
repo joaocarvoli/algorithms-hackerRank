@@ -17,4 +17,16 @@ def plusMinus(arr):
 
 
 plusMinus([-4, 3, -9, 0, 4, 1])
-    
+
+"""
+# Code complexity: 
+
+/-- SPACE --/
+3 declared variables + 1*3
+>>> 6
+
+/-- TIME --/
+3 elementary op + n*(1) elementary op + 1 elementary op + 3*2 elementary op 
+>>> n + 10
+>>> 0(n)
+"""

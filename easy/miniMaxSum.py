@@ -1,5 +1,5 @@
 # Time complexity of some functions: https://wiki.python.org/moin/TimeComplexity
-# Functions complexity: [min and max: O(n)], [len: O(1)], [list.index: O(n)]
+# Functions complexity: [min and max: O(n)], [len: O(1)]
 
 def miniMaxSum(arr):
     minimum = min(arr)
@@ -33,4 +33,16 @@ miniMaxSum([1,2,3,4,5])
 miniMaxSum([5,5,5,5,5])
 miniMaxSum([1,1,2,2,3,4,5])
 
-# Code complexity:
+"""
+# Code complexity: 
+elementary operation = ep
+
+/-- SPACE --/
+6 declared variables
+>>> 6
+
+/-- TIME --/
+n*2ep + 4ep + (n*4)*2ep
+>>> 4 + 10n
+>>> 0(n)
+"""

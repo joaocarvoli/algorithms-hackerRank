@@ -11,3 +11,16 @@ def compareTriplets(a, b):
     return [alice, bob]
             
 compareTriplets([1,2,3], [1,4,2])
+
+"""
+# Code complexity: 
+
+/-- SPACE --/
+2 declared variables
+>>> 2
+
+/-- TIME --/
+2 elementary op + n*(2) elementary op
+>>> 2n + 3 
+>>> 0(n)
+"""
