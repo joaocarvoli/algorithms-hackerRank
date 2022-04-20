@@ -14,5 +14,4 @@ def countApplesAndOranges(houseBegin,houseEnd,appleTree,orangeTree,apples,orange
     print(countOranges)
     return None
 
-
-print(countApplesAndOranges(7,10,4,12,[2,3,-4],[3,-2,-4]))
+countApplesAndOranges(7,10,4,12,[2,3,-4],[3,-2,-4])
