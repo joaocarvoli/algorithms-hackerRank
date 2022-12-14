@@ -1,3 +1,6 @@
+// Problem reference: https://www.hackerrank.com/challenges/bon-appetit/problem
+// Solution complexity: O(n)
+
 #include <iostream>
 #include <vector>
 using namespace std;
