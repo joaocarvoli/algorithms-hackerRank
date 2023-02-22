@@ -1,26 +1,16 @@
-def diagonalDifference(arr):
-    primary, secondary = [0,0]
-    for i in range(len(arr)):
-        for j in range(len(arr)):
+# Problem reference: https://www.hackerrank.com/challenges/diagonal-difference/problem
+# Complexity: O(n^2)
+
+def diagonal_difference(matrix: list) -> int:
+    primary, secondary = [0, 0]
+    for i in range(len(matrix)):
+        for j in range(len(matrix)):
             if i == j:
-                primary = primary + arr[i][j]
-            if (i + j) == (len(arr) - 1):
-                secondary = secondary + arr[i][j]
+                primary = primary + matrix[i][j]
+            if (i + j) == (len(matrix) - 1):
+                secondary = secondary + matrix[i][j]
 
-    return print(abs(primary - secondary))
+    return abs(primary - secondary)
 
-diagonalDifference([[11, 2, 4] ,[4, 5, 6] ,[10, 8, -12]])
 
-"""
-# Code complexity: 
-elementary operation = ep
-
-/-- SPACE --/
-2 declared variables
->>> 2
-
-/-- TIME --/
-n*n*(2n)
->>> 2n^3
->>> 0(n^3)
-"""
+print(diagonal_difference([[11, 2, 4], [4, 5, 6], [10, 8, -12]]))  # Expected value: 15
