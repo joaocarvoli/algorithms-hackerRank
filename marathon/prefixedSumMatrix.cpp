@@ -44,8 +44,8 @@ int main(){
     }
 
   Matrix matrixResult = prefixedSumMatrix(matrix);
-  for(int i = 0; i < columnsSize; i++){
-  for(int j = 0; j < linesSize; j++){
+  for(int i = 0; i < columns; i++){
+  for(int j = 0; j < rows; j++){
     printf("%d ", matrix[i][j]);
   }
   printf("\n");
