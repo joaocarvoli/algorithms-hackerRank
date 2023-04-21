@@ -3,10 +3,19 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
-int largestSubArraySum(std::vector<int> array, int arraySize){
+int kadene(std::vector<int> array, int arraySize){
 
-  return 0;
+  int maxSumLocal = array[0];
+  int maxSumGlobal = array[0];
+  
+  for(int i = 1; i < arraySize; i++){
+    maxSumLocal = fmax(array[i], maxSumLocal + array[i]);
+    if(maxSumLocal > maxSumGlobal) maxSumGlobal = maxSumLocal;
+  }
+
+  return maxSumGlobal;
 }
 
 int main(){
@@ -21,7 +30,7 @@ int main(){
     array.push_back(item);
   }
 
-  int result = largestSubArraySum(array, itemsAmount);
-  printf("The largest sum in this array is: %d", result);
+  int result = kadene(array, itemsAmount);
+  printf("\nThe largest sum in this array is: %d", result);
 }
 
