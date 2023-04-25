@@ -2,12 +2,42 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
 
+using VectorPairsInt = std::vector<std::pair<int, int> >;
+using PairInts = std::pair<int, int>;
 
-int activitySelection(std::vector<int> startTimes, std::vector<int> finishTimes, int arraySize){
+// Comparator function used in sort - decision based on hashmap key
+bool cmp(std::pair<int, int>& a, std::pair<int, int>& b){
+  return a.first < b.first;
+}
 
-  return 0;
+VectorPairsInt convertArrayHash(std::vector<int> array, int arraySize){
+  VectorPairsInt vectorPairs;
+
+  for(int i = 0; i < arraySize; i++){
+    PairInts pair;
+    pair.first = array[i];
+    pair.second = i;
+    vectorPairs.push_back(pair);
+  }
+
+  sort(vectorPairs.begin(), vectorPairs.end(), cmp);
+
+  return vectorPairs;
+}
+
+std::vector<int> activitySelection(std::vector<int> startTimes, std::vector<int> finishTimes, int arraySize){
+  std::vector<int> activityExecutable;
+  VectorPairsInt finishTimesMapOrdered = convertArrayHash(finishTimes, arraySize);
+  activityExecutable.push_back(finishTimesMapOrdered[0].second);
+
+  for(int i = 0; i < arraySize; i++){
+    if(finishTimesMapOrdered[activityExecutable.back()].first < startTimes.at(i)){
+      activityExecutable.push_back(i);
+    }
+  }
+
+  return activityExecutable;
 }
 
 int main(){
@@ -29,8 +59,11 @@ int main(){
     finishTimes.push_back(item);
   }
 
-  int result = activitySelection(startTimes, finishTimes, itemsAmount);
-  printf("The max num of activies is: %d", result);
+  std::vector<int> result = activitySelection(startTimes, finishTimes, itemsAmount);
+  printf("Result");
+  for(int i = 0; i < result.size(); i++){
+    printf("%d\n", result.at(i));
+  }
 }
 
 
